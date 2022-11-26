@@ -1,0 +1,37 @@
+scalar Date
+
+type Produto {
+  nome: String!
+  preco: Float!
+  desconto: Float
+  precoComDesconto: Float
+}
+
+type Usuario {
+  id: ID
+  nome: String!
+  email: String!
+  idade: Int
+  salario: Float
+  taVelho: Boolean
+  vip: Boolean
+  perfil: Perfil
+}
+
+type Perfil {
+  id: ID
+  nome: String
+}
+
+# Pontos de entrada da sua API
+type Query {
+  ola: String!
+  horaAtual: Date!
+  usuarioLogado: Usuario
+  produtoEmDestaque: Produto
+  numerosMegaSena: [Int!]!
+  usuarios: [Usuario]
+  usuario(id: ID): Usuario
+  perfis: [Perfil]
+  perfil(id: ID): Perfil
+}
